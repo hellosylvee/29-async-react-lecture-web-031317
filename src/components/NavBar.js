@@ -17,9 +17,6 @@ function NavBar(props){
       </div>
     </nav>
   )
-
-  // return React.createElement('nav', {className:  },
-  //   React.createElement('div', {className: 'container-fluid' }), React.createElement('div', {className: 'navbar-header'}, React.createElement('a', {className: 'navbar-brand'}, props.title)))
 }
 
 export default NavBar
