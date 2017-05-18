@@ -2,6 +2,7 @@ import React from 'react'
 
 import NavBar from './NavBar'
 import StudentList from './StudentList'
+import StudentForm from './StudentForm'
 
 class App extends React.Component {
 
@@ -13,15 +14,29 @@ class App extends React.Component {
   }
 
   handleAddDog(){
+    // BAD =- should use the function form
     this.setState({names: [...this.state.names, "Fido"]})
   }
 
+  handleAddStudent(name){
+    this.setState( prevState =>  ({ names: [...prevState.names, name] }) )
+  }
+
   render(){
+    console.log('render called in App!')
     return (
       <div>
-          < NavBar color='black' title={`Listing out ${this.state.names.length} cool students`} />
-          < StudentList students={this.state.names} />
-          <button onClick={this.handleAddDog.bind(this)}>Add Dog!</button>
+          < NavBar color='black' title={`Listing out ${this.state.names.length} really cool students`} />
+          <div className='row'>
+            <div className='col-md-4'>
+              < StudentList students={this.state.names} />
+              <button onClick={this.handleAddDog.bind(this)}>Add Dog!</button>
+            </div>
+
+            <div className='col-md-8'>
+              < StudentForm  onSubmit={ this.handleAddStudent.bind(this) }/>
+            </div>
+          </div>
       </div>
     )
   }
