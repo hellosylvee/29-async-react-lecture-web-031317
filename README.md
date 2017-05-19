@@ -1,16 +1,5 @@
-## Student Tracker
+# Student Tracker
 
-### User Stories
+### Async Data
 
-+ As a user, I can see a list of all the students - COMPLETE
-+ As a user, I can add a new student
-
-### What's hard?
-
-+ Which components have state?
-+ Calling functions as props
-+ passing down state as props
-+ The flow of the components
-+ props in class vs. props in function
-+ How to clear an input when the form is submitted
-+ Having our form be 'stateful'
+Do we want our data to persist? Of course we do! Let's make a reqeust to an API to sync our state with what's in our database. 
