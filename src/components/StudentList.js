@@ -1,12 +1,14 @@
 import React from 'react'
 
 function StudentList(props) {
-  const nameEls = props.students.map( name =>  React.createElement('li', {}, name) )
+  const nameEls = props.students.map( (name, i) => <li key={i}>{name}</li>)
 
   return (
-    <ul>
-      { nameEls }
-    </ul>
+      <div className='col-md-4'>
+        <ul>
+          { nameEls }
+        </ul>
+      </div>
   )
 }
 
